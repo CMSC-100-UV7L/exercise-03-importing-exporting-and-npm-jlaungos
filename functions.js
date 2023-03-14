@@ -16,26 +16,9 @@ function generateUniqueID(firstName, lastName) {
 // Function to verify if the parameters are complete and valid, and when it is true, it will be stored as a new line in a txt file
 function addAccount([firstName, lastName, email, age]){
     // Checks if all the fields/parameters are present/defined
-    if (firstName === undefined){
-        firstName = 'No First Name'; // If there was no first name, it will store a default value of 'No First Name'
+    if (firstName === undefined || lastName === undefined || email === undefined || age === undefined) {
         return false;
     }
-    if (lastName === undefined){
-        lastName = 'No Last Name'; // If there was no last name, it will store a default value of 'No Last Name'
-        return false;
-    }
-    if (email === undefined){
-        email = 'No Email'; // If there was no email, it will store a default value of 'No Email'
-        return false;
-    }
-    if (age === undefined){
-        age = 'No Age'; // If there was no age, it will store a default value of 'No Age'
-        return false;
-    }
-
-    // if (firstName === undefined || lastName === undefined || email === undefined || age === undefined) {
-    //     return false;
-    // }
 
     // Checks if at least 1 of the paraemters are non-empty strings
     if (firstName === "" || lastName === "" || email === ""){
